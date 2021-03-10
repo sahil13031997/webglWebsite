@@ -1,0 +1,808 @@
+body{
+	margin:0px;
+	padding:0px;
+	position: absolute; 
+	height:100%;
+	width:100%;
+	background-size:cover;
+	font-style: regular;
+	font-family:"Myriad Pro", Myriad,"Helvetica Neue", Helvetica, Arial, sans-serif;
+	background-color:#f0f0f1;
+}
+
+.webgl-content,#loadingBlock,#errorBrowserBlock{
+	padding:0px;
+	position:absolute;
+	height:100vh;
+	width:100vw;
+	background-color:#f0f0f1;
+}
+
+#gameContainer,canvas{
+	position:absolute;
+	height:100%;
+	width:100%;
+	background-color:#f0f0f1;
+}
+
+#fullScreenButton{
+	height:30px;
+	width:30px;
+	position:absolute;
+	z-index:1;
+	bottom:5px;
+	right:5px;
+	background-color:transparent;
+	background-image:url("../img/fullScreen_on.png");
+	background-size:30px 30px;
+	border:none;
+	cursor: pointer;
+}
+
+.subtitle{
+	color:#1896a7;
+	font-size:2.5vh;
+	padding-bottom:3vh;
+	padding-top: 3vh;
+	display: block;
+	height:15vh;
+	width:40vw;
+	margin:auto;
+	text-align: center;
+}
+
+.logo{
+	height:25vh;
+	width:auto;
+	display: block;
+	margin:auto;
+	margin-top:2vh;
+}
+
+#loadingBlock,#errorBrowserBlock{
+	background-image:url("../img/background.png");
+	background-size:cover;
+}
+
+#emptyBar{
+	background: url("../img/progressEmpty.png") no-repeat right;
+	float: right; 
+	width: 60%; 
+	height: 100%; 
+	display: inline-block;
+}
+
+#fullBar{
+	background: url("../img/progressFull.png") no-repeat right;
+	float: left; 
+	width: 40%; 
+	height: 100%; 
+	display: inline-block;
+}
+
+#progressBar,#warningBrowserBlock,#warningMobileBlock,#errorContent{
+	height:25vh;
+	width:40vw;
+	margin:auto;
+	text-align: center;
+}
+
+#progressBar{
+	height:8vh;
+	color:#666666;
+	font-size:4vh;
+}
+
+#warningBrowserBlock,#warningMobileBlock,#errorContent{
+	margin-top:15vh;
+	color:#666666;
+	font-size:2.3vh;
+}
+
+.browserIcons{
+	display: inline-flex;
+	margin-top:2vh;
+}
+
+.browserIcons a{
+	width:150px;
+}
+
+#errorContent{
+	font-size:3vh;
+	margin-top:5vh;
+}
+
+.centered{
+	height: 100%;
+	max-width:770px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+
+/* When aspect-ratio is smaller than 4/3*/
+
+/*@media (max-aspect-ratio: 4/3){
+	
+	.webgl-content{
+		-webkit-transform: translate(0%, 0%); transform: translate(0%, 0%);
+		-webkit-box-shadow: 0px 0px 29px 0px rgba(0,0,0,0.15);
+		-moz-box-shadow: 0px 0px 29px 0px rgba(0,0,0,0.15);
+		box-shadow: 0px 0px 29px 0px rgba(0,0,0,0.15);
+	}
+	
+	.keepRatio{
+		width:100%;
+		padding-top: 75%;
+		position: relative;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+
+	.webgl-content,#loadingBlock,#errorBrowserBlock{
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+	}
+
+	.logo{
+		width:25vw;
+		height:auto;
+		margin-top:1vh;
+	}
+	
+	.subtitle{
+		font-size:2vw;
+		height:10vw;
+		padding-bottom:1vw;
+		padding-top: 1vw;
+	}
+
+	.subtitle,#progressBar,#warningBrowserBlock,#warningMobileBlock,#errorContent{
+		width:80vw;
+	}
+	
+	#progressBar{
+		height:6vw;
+		margin-top: 2vw;
+		font-size:3vw;
+	}
+	
+	#emptyBar,#fullBar{
+		height: 2vw; 
+	}
+	
+	#warningBrowserBlock,#warningMobileBlock,#errorContent{
+		margin-top:3vw;
+		font-size:2vw;
+	}
+	
+	.browserIcons{
+		margin-top:1vw;
+	}
+	
+	.browserIcons a{
+		width:15vw;
+	}
+	
+	.browserIcons a img{
+		width:8vw;
+	}
+	
+	.webgl-content,#loadingBlock,#errorBrowserBlock{
+		border:1px solid #c6c9ca;
+		width:calc(100% - 2px);
+		height:auto;
+	}
+}*/
+
+
+/* When aspect-ratio is bigger than 16/9*/
+
+/*@media (min-aspect-ratio: 16/9){
+	body{
+		display:flex;
+		flex-wrap:wrap;
+		justify-content:space-between;
+	}
+	
+	.keepRatio{
+		width:178vh;
+		height:100%;
+		margin:0 auto;
+	}
+	
+	.webgl-content,#gameContainer,canvas,#loadingBlock,#errorBrowserBlock{
+		width: inherit;
+	}
+	
+	.webgl-content{
+	-webkit-box-shadow: 0px 0px 29px 0px rgba(0,0,0,0.15);
+		-moz-box-shadow: 0px 0px 29px 0px rgba(0,0,0,0.15);
+		box-shadow: 0px 0px 29px 0px rgba(0,0,0,0.15);
+	}
+	
+	.subtitle,#progressBar,#warningBrowserBlock,#warningMobileBlock,#errorContent{
+		width:100vh;
+	}
+	
+	.webgl-content,#loadingBlock,#errorBrowserBlock{
+		border:1px solid #c6c9ca;
+		height:calc(100% - 2px);
+	}
+}*/
+
+
+
+
+.circle{
+	z-index:0;
+    background: rgb(0, 39, 70);
+    width: 650px;
+    height: 650px;
+    position: relative;
+    box-shadow: 0 50px 40px rgba(0,0,0,0.5), 0 20px 10px rgba(0,0,0,0.3);
+    border-radius: 100%;
+    overflow: hidden;
+	margin:auto;
+	top:15%;
+	
+}
+.moon1{
+    background: #ffa62b;
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    top: 18%;
+    left: 65%;
+    border-radius: 100%;
+}
+.moon2{
+    background: rgb(0, 39, 70);
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    top: 19%;
+    left: 68%;
+    border-radius: 100%;
+}
+
+.moon3{
+    background: #ffa62b;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 65%;
+    left: 55%;
+    border-radius: 60%;
+    opacity: 0.5;
+}
+.moon4{
+    background: #002747;
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    top: 65%;
+    left: 56%;
+    border-radius: 60%;
+}
+.star1 {
+    background: rgb(255, 255, 255);
+    width: 5px;
+    height: 5px;
+    position: absolute;
+    top: 30%;
+    left: 80%;
+    border-radius: 100%;
+    opacity: 0.5;
+    animation-name: glowing-stars;
+    animation-name: colors-stars;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-timing-function: linear;
+    animation-delay: 750ms;
+  }
+  .star2 {
+    background: white;
+    width: 3px;
+    height: 3px;
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    border-radius: 100%;
+    opacity: 0.5;
+    animation-name: glowing-stars;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-timing-function: linear;
+    animation-delay: 900ms;
+  }
+  .star3 {
+    background: white;
+    width: 3px;
+    height: 3px;
+    position: absolute;
+    top: 7%;
+    left: 50%;
+    border-radius: 100%;
+    opacity: 0.5;
+    animation-name: glowing-stars;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-timing-function: linear;
+    animation-delay: 1s;
+  }
+  .star4 {
+    background: white;
+    width: 3px;
+    height: 3px;
+    position: absolute;
+    top: 10%;
+    left: 30%;
+    border-radius: 100%;
+    opacity: 0.5;
+    animation-name: glowing-stars;
+    animation-duration: 7s;
+    animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-timing-function: linear;
+    animation-delay: 2s;
+  }
+  .star5 {
+    background: white;
+    width: 4px;
+    height: 4px;
+    position: absolute;
+    top: 23%;
+    left: 55%;
+    border-radius: 100%;
+    opacity: 0.5;
+    animation-name: glowing-stars;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-timing-function: linear;
+    animation-delay: 500ms;
+  }
+  .star6 {
+    background: white;
+    width: 3px;
+    height: 3px;
+    position: absolute;
+    top: 15%;
+    left: 30%;
+    border-radius: 100%;
+    opacity: 0.5;
+    animation-name: glowing-stars;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-timing-function: linear;
+    animation-delay: 310ms;
+  }
+  .star7 {
+    background: white;
+    width: 2px;
+    height: 2px;
+    position: absolute;
+    top: 50%;
+    left: 68%;
+    border-radius: 100%;
+    opacity: 0.5;
+    animation-name: glowing-stars;
+    animation-duration: 9s;
+    animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-timing-function: linear;
+      animation-delay: 430ms;
+  }
+  .star8 {
+    background: rgb(255, 255, 255);
+    width: 4px;
+    height: 4px;
+    position: absolute;
+    top: 10%;
+    left: 38%;
+    border-radius: 100%;
+    opacity: 0.5;
+    animation-name: glowing-stars;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-timing-function: linear;
+      animation-delay: 480ms;
+  }
+  .star9 {
+    background: rgb(255, 255, 255);
+    width: 2px;
+    height: 2px;
+    position: absolute;
+    top: 40%;
+    left: 38%;
+    border-radius: 100%;
+    opacity: 0.5;
+    animation-name: glowing-stars;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-timing-function: linear;
+      animation-delay: 120ms;
+  }
+  .star10 {
+    background: white;
+    width: 3px;
+    height: 3px;
+    position: absolute;
+    top: 9%;
+    left: 45%;
+    border-radius: 100%;
+    opacity: 0.5;
+    animation-name: glowing-stars;
+    animation-duration: 12s;
+    animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-timing-function: linear;
+      animation-delay: 630ms;
+  }
+  .star11 {
+    background: rgb(129, 212, 245);
+    width: 3px;
+    height: 3px;
+    position: absolute;
+    top: 8%;
+    left: 54%;
+    border-radius: 100%;
+    opacity: 0.5;
+    animation-name: glowing-stars;
+    animation-name: colors-stars;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-timing-function: linear;
+      animation-delay: 630ms;
+  }
+  .star12 {
+    background: white;
+    width: 3px;
+    height: 3px;
+    position: absolute;
+    top: 15%;
+    left: 38%;
+    border-radius: 100%;
+    opacity: 0.5;
+    animation-name: glowing-stars;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-timing-function: linear;
+      animation-delay: 630ms;
+  }
+  .star13 {
+    background: white;
+    width: 3px;
+    height: 3px;
+    position: absolute;
+    top: 26%;
+    left: 12%;
+    border-radius: 100%;
+    opacity: 0.5;
+    animation-name: glowing-stars;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-timing-function: linear;
+    animation-delay: 500ms;
+  }
+  .star14 {
+    background: rgb(255, 255, 255);
+    width: 3px;
+    height: 3px;
+    position: absolute;
+    top: 68%;
+    left: 20%;
+    border-radius: 100%;
+    opacity: 0.5;
+    animation-name: glowing-stars;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-timing-function: linear;
+    animation-delay: 900ms;
+  }
+  .star15 {
+    background: rgb(255, 255, 255);
+    width: 2px;
+    height: 2px;
+    position: absolute;
+    top: 66%;
+    left: 38%;
+    border-radius: 100%;
+    opacity: 0.5;
+    animation-name: glowing-stars;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-timing-function: linear;
+      animation-delay: 120ms;
+  }
+
+  @keyframes glowing-stars {
+    0%   {opacity: 0;}
+    50%  {opacity: 1;}
+    100% {opacity: 0;}
+  }
+
+  @keyframes colors-stars {
+    from {background-color: rgb(255, 255, 255);}
+    to {background-color: rgb(175, 211, 251);}
+  }
+
+  .cloud1 {
+    background: white;
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    height: 15px;
+    width: 90px;
+    border-radius: 50px;
+    opacity: 0.5;
+    animation: 95s linear infinite slideright;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+  .cloud2 {
+    background: rgb(255, 255, 255);
+    position: absolute;
+    top: 40%;
+    left: 60%;
+    height: 8px;
+    width: 30px;
+    border-radius: 50px;
+    opacity: 0.5;
+    animation: 28s linear infinite slideright;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+  .cloud3 {
+    background: rgb(255, 255, 255);
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    height: 15px;
+    width: 60px;
+    border-radius: 50px;
+    opacity: 0.5;
+    animation: 65s linear infinite slideright;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+
+  .cloud4 {
+    background: rgb(255, 255, 255);
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    height: 8px;
+    width: 50px;
+    border-radius: 50px;
+    opacity: 0.5;
+    animation: 62s linear infinite slideright;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+  .cloud5 {
+    background: rgb(243, 243, 243);
+    position: absolute;
+    top: 12%;
+    left: 53%;
+    height: 8px;
+    width: 62px;
+    border-radius: 50px;
+    opacity: 0.5;
+    animation: 48s linear infinite slideright;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+  .cloud6 {
+    background: rgb(253, 253, 253);
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    height: 8px;
+    width: 120px;
+    border-radius: 50px;
+    opacity: 0.5;
+   animation: 40s linear infinite slideleft;
+    animation-iteration-count: infinite;
+    animation-direction: alternate; 
+  }
+  .cloud7{
+    background: rgb(255, 255, 255);
+    position: absolute;
+    top: 20%;
+    left: 80%;
+    height: 15px;
+    width: 100px;
+    border-radius: 50px;
+    opacity: 0.5;
+        animation: 30s linear infinite slideleft;
+    animation-iteration-count: infinite;
+    animation-direction: alternate; 
+      
+  }
+  @keyframes slideright {
+    from {
+      transform: translateX(-400%);
+    }
+    to {
+      transform: translateX(1000%);
+    }
+  }
+  @keyframes slideleft {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(-400%);
+    }
+  }
+  .hill1 {
+    position: absolute;
+    top: 51%;
+    left: -16%;
+    width: 250px;
+    height: 200px;
+    background: linear-gradient(70deg, #dbe6e4 20% , #1a405f 40%,#244241);
+    transform: rotate(45deg);
+  }
+  .hill2 {
+    position: absolute;
+    top: 56%;
+    left: 7%;
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(70deg, #1a405f 20% , #244241 80%);
+    transform: rotate(46deg);
+  }
+  .hill3 {
+    position: absolute;
+    top: 53%;
+    left: -9%;
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(70deg,   #244a69 20%,#244241 80%);
+    transform: rotate(48deg);
+  }
+  .land1 {
+    position: absolute;
+    top: 65%;
+    left: 0%;
+    width: 800px;
+    height: 300px;
+    background: linear-gradient(180deg, rgb(0, 39, 71) , rgb(18, 54, 87) 40%);
+  }
+  .road1 {
+    position: absolute;
+    background: #002746;
+    top: 80%;
+    left: -5%;
+    width: 600px;
+    height: 450px;
+    border-radius: 1% 100% 100% 100% / 62% 51% 37% 68%;
+    transform: rotate(-20deg) skew(-45deg, -10deg);
+  }
+  .road2 {
+    position: absolute;
+    background: rgb(228, 222, 222);
+    top: 98%;
+    left: 43%;
+    width: 23px;
+    height: 23px;
+    border-radius: 70% 100% 100% 100% / 62% 51% 37% 68%;
+    transform: rotate(-10deg) skew(-66deg, 10deg);
+    opacity: 0.5;
+  }
+  .road3 {
+    position: absolute;
+    background: rgb(228, 222, 222);
+    top: 80%;
+    left: 65%;
+    width: 9px;
+    height: 9px;
+    border-radius: 70% 100% 100% 100% / 62% 51% 37% 68%;
+    transform: rotate(-15deg) skew(-66deg, 10deg);
+    opacity: 0.5;
+  }
+  .road4 {
+    position: absolute;
+    background: rgb(228, 222, 222);
+    top: 68%;
+    left: 80%;
+    width: 3px;
+    height: 3px;
+    border-radius: 70% 100% 100% 100% / 62% 51% 37% 68%;
+    transform: rotate(-15deg) skew(-66deg, 10deg);
+    opacity: 0.5;
+  }
+  .river1 {
+    position: absolute;
+    background: linear-gradient(180deg, #002747 ,#173a74);
+    top: 29%;
+    left: 10%;
+    width: 60px;
+    height: 500px;
+    border-radius: 50% 100% 100% 10% / 62% 51% 49% 38%;
+    transform: rotate(53deg) skew(-36deg, -16deg);
+  }
+
+ .tree1 {
+    border-color: transparent transparent #244224 transparent;
+    border-style: solid;
+    width: 0;
+    height: 0;
+    border-width: 0 35px 90px 35px;
+    display: block;
+    position: absolute;
+    top: 425px;
+    left: 7%;
+}
+.leg1{
+    background:  #343530;
+    width: 15px;
+    height: 40px;
+    top: 510px;
+    left: 11%;
+    position: absolute;
+}
+.tree2 {
+    border-color: transparent transparent #244224 transparent;
+    border-style: solid;
+    width: 0;
+    height: 0;
+    border-width: 0 25px 60px 25px;
+    display: block;
+    position: absolute;
+    top: 430px;
+    left: 30%;
+}
+.leg2{
+    background:  #343530;
+    width: 10px;
+    height: 20px;
+    top: 490px;
+    left: 33%;
+    position: absolute;
+
+}
+ 
+.tree3 {
+    border-color: transparent transparent #244224 transparent;
+    border-style: solid;
+    width: 0;
+    height: 0;
+    border-width: 0 9px 20px 9px;
+    display: block;
+    position: absolute;
+    top: 410px;
+    left: 92%;
+}
+.leg3{
+    background:  #343530;
+    width: 5px;
+    height: 5px;
+    top: 430px;
+    left: 93%;
+    position: absolute;
+}
+ 
+  
+  
+
+
+
