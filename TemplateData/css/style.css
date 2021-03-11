@@ -802,14 +802,7 @@ body{
 }
  
   
-  #writtenText{
-	  z-index:5;
-	   position:center;
-	   margin:auto;
-
-    position: absolute;
-  }
-  
+ 
   
   
   
@@ -821,12 +814,13 @@ body{
 	src: url(sansation_light.woff);
 	  font-weight:normal;
 	  color:#FFF;
-	   position:  absolute ;
-		top: 50%;
-		left: 50%;
+	 		
+		text-align:center;
 	  text-shadow:2px 2px 2px #333;
 	  
-	  
+	  position:  relative ;
+	  margin-top: 20%;
+  
   }
   
   
@@ -854,6 +848,7 @@ body{
 	  
 	  
   }
+  
   
   
   
